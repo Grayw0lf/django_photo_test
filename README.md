@@ -2,7 +2,7 @@
 
 This is another completed test task. Before working with writing an [API.](https://github.com/untername/tasker_test)
 
-On assignment, it was necessary to create a website for uploading and displaying photos. 
+On assignment, it was necessary to create a website for uploading and displaying photos with comments.
 Photos had to be reduced in size, and in full size in a modal window.
 
 Used:
