@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Send photo, please</title>
+    </head>
+    <body style="background: url(https://million-wallpapers.ru/wallpapers/5/15/525808012098959/temnyj-fon.jpg)">
+        <div class="start" style="padding: 40px;">
+            <div class="alert alert-info" role="alert" style="padding: 40px;">
+                Below are examples of what an uploaded photo with a comment will look like.
+                Click the button next to each photo to open the full size image.
+            </div>
+        </div>
+        <div class="imges" style="padding-bottom: 20px; padding-left: 100px; padding-right: 80px;">    
+            {% for pst in object_list %}
+                <div class="vlock" style="padding: 20px; float: left;">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{ pst.photo.url }}" class="card-img-top" alt="{{ pst.comment }}" width="160" height="160">
+                            </div>
+                            <div class="col-md-8" style="background-color: darkgrey;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ pst.comment }}</h5>
+                                    <p class="card-text" style="padding-top: 30px;">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop{{ forloop.counter }}">
+                                            Full-sized photo
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrop{{ forloop.counter }}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">{{ pst.comment }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{ pst.photo.url }}" class="img-thumbnail" alt="{{ pst.comment }}">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="clear" style="clear: left;"></div>
+        </div>
+        <div class="c" style="padding-left: 80px; padding-right: 80px; padding-bottom: 60px;">
+            <form action="" method="GET">
+                <a class="btn btn-secondary btn-lg btn-block" href='upload/' role="button">Upload a new photo</a>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
