@@ -2,7 +2,7 @@
 FROM python:3.8.3-alpine
 
 # set work directory
-WORKDIR /usr/src/apps
+WORKDIR /user/src/apps
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
