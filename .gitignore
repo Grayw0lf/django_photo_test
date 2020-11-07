@@ -5,3 +5,5 @@ db.sqlite3
 .mypy_cache
 migrations
 media
+.idea
+venv
