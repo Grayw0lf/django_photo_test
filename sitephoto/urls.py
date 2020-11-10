@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('guidophoto.urls'))
+    path('', include('apps.guidophoto.urls'))
 ]
 
 if settings.DEBUG:
