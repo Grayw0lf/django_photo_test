@@ -3,7 +3,7 @@ FROM python:3
 
 
 # Устанавливаем рабочую директорию
-WORKDIR /djangophoto
+WORKDIR /usr/src/djangophoto
 
 # Устанавливаем переменные окружения
 ENV PYTHONDONTWRITEBYTECODE 1
