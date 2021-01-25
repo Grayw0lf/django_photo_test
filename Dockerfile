@@ -1,5 +1,5 @@
 # Получаем официальный имидж
-FROM python:3
+FROM python:3.7.7
 
 
 # Устанавливаем рабочую директорию
@@ -18,7 +18,7 @@ RUN pip install -r requirements.txt
 COPY ./entrypoint.sh /usr/src/djangophoto/
 
 # Копируем проект
-COPY ./ /usr/src/djangophoto/
+COPY . /usr/src/djangophoto/
 
 # run entrypoint.sh
 # ENTRYPOINT ["/usr/src/djangophoto/entrypoint.sh"]
